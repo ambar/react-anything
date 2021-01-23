@@ -1,18 +1,27 @@
 {
   "name": "react-inline-center",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Centering inline element",
   "license": "MIT",
+  "module": "dist/index.esm.js",
+  "main": "dist/index.cjs.js",
   "scripts": {
-    "prepare": "npm test",
+    "prepare": "npm test && npm run build",
     "test": "jest",
-    "test:coverage": "jest --coverage",
-    "test:watch": "jest --watch --notify"
+    "build": "esbuild index.jsx --outfile=dist/index.cjs.js --format=cjs && esbuild index.jsx --outfile=dist/index.esm.js --format=esm"
   },
   "files": [
     "lib"
   ],
+  "jest": {
+    "preset": "es-jest"
+  },
   "devDependencies": {
-    "jest": "^26.6.3"
+    "es-jest": "^0.0.1",
+    "esbuild": "^0.8.34",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "react": "^17.0.1",
+    "react-test-renderer": "^17.0.1"
   }
 }

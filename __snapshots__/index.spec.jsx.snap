@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders default 1`] = `
+<span
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "inline-flex",
+    }
+  }
+>
+  ​
+  text
+</span>
+`;
+
+exports[`renders disabled 1`] = `"text"`;
