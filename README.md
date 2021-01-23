@@ -6,6 +6,10 @@
 npm install react-inline-center
 ```
 
+## Demo
+
+<https://codesandbox.io/s/react-inline-center-hu81q>
+
 ## Usage
 
 ```js
