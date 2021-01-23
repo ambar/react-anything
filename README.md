@@ -1,5 +1,9 @@
 # react-inline-center
 
+[![npm version](https://badgen.net/npm/v/react-inline-center)](https://www.npmjs.com/package/react-inline-center)
+[![minzipped size](https://badgen.net/bundlephobia/minzip/react-inline-center)](https://bundlephobia.com/result?p=react-inline-center)
+![module](https://badgen.net/badge/module/esm,cjs?list=1)
+
 ## Install
 
 ```

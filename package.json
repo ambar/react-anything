@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Centering inline element",
   "license": "MIT",
+  "repository": "ambar/react-inline-center",
   "module": "dist/index.esm.js",
   "main": "dist/index.cjs.js",
   "scripts": {
