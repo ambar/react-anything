@@ -9,18 +9,21 @@
   "scripts": {
     "prepare": "npm test && npm run build",
     "test": "jest",
-    "build": "esbuild index.jsx --outfile=dist/index.cjs.js --format=cjs && esbuild index.jsx --outfile=dist/index.esm.js --format=esm"
+    "build": "esbuild index.tsx --outfile=dist/index.cjs.js --format=cjs && esbuild index.tsx --outfile=dist/index.esm.js --format=esm"
   },
   "files": [
-    "lib"
+    "dist"
   ],
   "jest": {
     "preset": "es-jest"
   },
+  "peerDependencies": {
+    "react": "*"
+  },
   "devDependencies": {
-    "es-jest": "^0.0.1",
-    "esbuild": "^0.8.34",
-    "jest": "^26.6.3",
+    "es-jest": "^1.4.1",
+    "esbuild": "^0.13.8",
+    "jest": "^27.3.1",
     "prettier": "^2.2.1",
     "react": "^17.0.1",
     "react-test-renderer": "^17.0.1"

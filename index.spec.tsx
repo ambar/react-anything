@@ -8,6 +8,8 @@ test('renders default', () => {
 })
 
 test('renders disabled', () => {
-  const tree = renderer.create(<InlineCenter disabled>text</InlineCenter>).toJSON()
+  const tree = renderer
+    .create(<InlineCenter disabled>text</InlineCenter>)
+    .toJSON()
   expect(tree).toMatchSnapshot()
 })
