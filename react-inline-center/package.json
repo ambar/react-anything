@@ -7,22 +7,20 @@
   "module": "dist/index.esm.js",
   "main": "dist/index.cjs.js",
   "scripts": {
-    "prepare": "npm test && npm run build",
-    "test": "jest",
+    "prepare": "npm run build",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
     "build": "esbuild index.tsx --outfile=dist/index.cjs.js --format=cjs && esbuild index.tsx --outfile=dist/index.esm.js --format=esm"
   },
   "files": [
     "dist"
   ],
-  "jest": {
-    "preset": "es-jest"
-  },
   "peerDependencies": {
     "react": "*"
   },
   "devDependencies": {
-    "esbuild": "^0.13.8",
-    "react": "^17.0.1",
-    "react-test-renderer": "^17.0.1"
+    "esbuild": "^0.20.2",
+    "react": "^18.2.0",
+    "react-test-renderer": "^18.2.0"
   }
 }

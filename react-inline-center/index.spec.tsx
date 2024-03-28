@@ -1,3 +1,4 @@
+import {test, expect} from 'vitest'
 import React from 'react'
 import renderer from 'react-test-renderer'
 import InlineCenter from './index'
