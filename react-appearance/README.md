@@ -17,7 +17,7 @@ npm install react-appearance
 
 Add the `ColorSchemeProvider` to the root of your app:
 
-```jsx
+```tsx
 import {ColorSchemeProvider} from 'react-appearance'
 
 render(
@@ -25,23 +25,50 @@ render(
     <App />
   </ColorSchemeProvider>
 )
+
+type ColorScheme = 'light' | 'dark'
+type ColorSchemeProviderProps = {
+  children: ReactNode,
+  /**
+   * The key to use in localStorage
+   * @default 'theme'
+   */
+  storageKey?: string
+  /**
+   * The default color scheme to use when the user hasn't set a preference
+   * @default 'light'
+   */
+  defaultColorScheme?: ColorScheme
+  /**
+   * Override the color scheme with a hardcoded value, defaults to the system's preference
+   */
+  colorScheme?: ColorScheme
+}
 ```
 
 And the `getInlineColorSchemeScript` to the head of your document.
 
-```jsx
+```tsx
 import {getInlineColorSchemeScript} from 'react-appearance'
 
 render(
   <head>
-    <script dangerouslySetInnerHTML={{__html: getInlineColorSchemeScript()}} />
+    <script dangerouslySetInnerHTML={{__html: getInlineColorSchemeScript(opts: InlineScriptOptions)}} />
   </head>
 )
+
+type InlineScriptOptions = Pick<ColorSchemeProviderProps, 'storageKey' | 'colorScheme'> & {
+  /**
+   * The classes to toggle based on the color scheme
+   * @default [undefined, 'dark']
+   */
+  classes?: [Nullable<string>, Nullable<string>]
+}
 ```
 
 Access the color scheme in your components:
 
-```jsx
+```tsx
 import {ColorSchemeContext, useColorScheme} from 'react-appearance'
 
 const [colorScheme, setColorScheme] = useContext(ColorSchemeContext)
