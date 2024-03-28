@@ -1,0 +1,45 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "vcs": {
+    "enabled": true,
+    "useIgnoreFile": true,
+    "clientKind": "git"
+  },
+  "organizeImports": {
+    "enabled": true
+  },
+  "files": {
+    "ignore": ["package.json"]
+  },
+  "formatter": {
+    "indentStyle": "space"
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "semicolons": "asNeeded",
+      "arrowParentheses": "asNeeded",
+      "trailingComma": "all",
+      "bracketSpacing": false
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "style": {
+        "noNonNullAssertion": "warn"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "include": [".vscode/*.json", ".cspell.json"],
+      "json": {
+        "parser": {
+          "allowComments": true
+        }
+      }
+    }
+  ]
+}

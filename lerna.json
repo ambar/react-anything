@@ -1,0 +1,14 @@
+{
+  "version": "independent",
+  "packages": ["react-*"],
+  "ignoreChanges": [
+    "**/__tests__/**",
+    "**/__snapshots__/**",
+    "**/*.spec.*",
+    "**/*.mdx",
+    "**/*.md"
+  ],
+  "npmClient": "pnpm",
+  "useNx": true,
+  "conventionalCommits": true
+}

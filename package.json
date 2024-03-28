@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "workspaces": [
+    "react-*"
+  ],
+  "scripts": {
+    "lint": "biome check .",
+    "lint:fix": "biome check --apply .",
+    "lint:fix-unsafe": "biome check --apply-unsafe ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.6.3"
+  }
+}

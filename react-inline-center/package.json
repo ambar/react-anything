@@ -21,10 +21,7 @@
     "react": "*"
   },
   "devDependencies": {
-    "es-jest": "^1.4.1",
     "esbuild": "^0.13.8",
-    "jest": "^27.3.1",
-    "prettier": "^2.2.1",
     "react": "^17.0.1",
     "react-test-renderer": "^17.0.1"
   }
