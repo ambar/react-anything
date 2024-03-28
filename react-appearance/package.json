@@ -1,0 +1,26 @@
+{
+  "name": "react-appearance",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "ambar/react-anything",
+    "directory": "react-appearance"
+  },
+  "files": ["dist"],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.mjs"
+  },
+  "scripts": {
+    "dev": "vite example",
+    "prebuild": "rm -rf dist",
+    "build": "pkgroll"
+  },
+  "peerDependencies": {
+    "react": ">=16.14.0"
+  }
+}

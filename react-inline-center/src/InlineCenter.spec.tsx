@@ -1,5 +1,5 @@
-import {test, expect} from 'vitest'
 import renderer from 'react-test-renderer'
+import {expect, test} from 'vitest'
 import InlineCenter from './InlineCenter'
 
 test('renders default', () => {
