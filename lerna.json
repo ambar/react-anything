@@ -2,6 +2,7 @@
   "version": "independent",
   "packages": ["react-*"],
   "ignoreChanges": [
+    "**/example/**",
     "**/__tests__/**",
     "**/__snapshots__/**",
     "**/*.spec.*",
