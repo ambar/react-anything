@@ -91,13 +91,16 @@ export const useColorSchemeState = ({
       if (hardcodedColorScheme) {
         return
       }
-      document.documentElement.classList.toggle('dark', value === 'dark')
-      document.documentElement.style.colorScheme = value
       setColorSchemeInternal(value)
       setStoredTheme(storeValue)
       setSkipEffect(true)
     },
   )
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', colorScheme === 'dark')
+    document.documentElement.style.colorScheme = colorScheme
+  }, [colorScheme])
 
   // Skip the first effect on mount, only call the effect when the value changes
   const [skipEffect, setSkipEffect] = useState(true)
