@@ -34,7 +34,7 @@
   },
   "overrides": [
     {
-      "include": [".vscode/*.json", ".cspell.json"],
+      "include": [".vscode/*.json", ".cspell.json", "tsconfig.json"],
       "json": {
         "parser": {
           "allowComments": true

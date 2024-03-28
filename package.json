@@ -3,16 +3,27 @@
   "private": true,
   "workspaces": ["react-*"],
   "scripts": {
-    "build": "lerna run build",
+    "build": "lerna run prebuild && lerna run build",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
     "lint": "biome check .",
     "lint:fix": "biome check --apply .",
     "lint:fix-unsafe": "biome check --apply-unsafe ."
   },
+  "resolutions": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "devDependencies": {
     "@biomejs/biome": "^1.6.3",
     "@types/react": "^18.2.73",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^4.2.1",
     "pkgroll": "^2.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "typescript": "^5.4.3",
+    "vite": "^5.2.6",
     "vitest": "^1.4.0"
   }
 }
