@@ -1,7 +1,6 @@
 import {test, expect} from 'vitest'
-import React from 'react'
 import renderer from 'react-test-renderer'
-import InlineCenter from './index'
+import InlineCenter from './InlineCenter'
 
 test('renders default', () => {
   const tree = renderer.create(<InlineCenter>text</InlineCenter>).toJSON()

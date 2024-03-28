@@ -4,22 +4,24 @@
   "description": "Centering inline element",
   "license": "MIT",
   "repository": "ambar/react-inline-center",
-  "module": "dist/index.esm.js",
-  "main": "dist/index.cjs.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.mjs"
+  },
   "scripts": {
-    "prepare": "npm run build",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
-    "build": "esbuild index.tsx --outfile=dist/index.cjs.js --format=cjs && esbuild index.tsx --outfile=dist/index.esm.js --format=esm"
+    "prebuild": "rm -rf dist",
+    "build": "pkgroll"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "peerDependencies": {
     "react": "*"
   },
   "devDependencies": {
-    "esbuild": "^0.20.2",
     "react": "^18.2.0",
     "react-test-renderer": "^18.2.0"
   }

@@ -9,7 +9,7 @@
     "enabled": true
   },
   "files": {
-    "ignore": ["package.json"]
+    "ignore": []
   },
   "formatter": {
     "indentStyle": "space"

@@ -1,14 +1,18 @@
-import React from 'react'
-
 // zero-width space
 const ZWSP = '\u200b'
 
-const InlineCenter = ({children, disabled = false}) =>
+type Props = {
+  children: React.ReactNode
+  disabled?: boolean
+}
+
+const InlineCenter = ({children, disabled = false}: Props) =>
   disabled ? (
     children
   ) : (
     <span style={{display: 'inline-flex', alignItems: 'center'}}>
-      {ZWSP}{children}
+      {ZWSP}
+      {children}
     </span>
   )
 
