@@ -1,7 +1,9 @@
 {
   "name": "root",
   "private": true,
-  "workspaces": ["react-*"],
+  "workspaces": [
+    "react-*"
+  ],
   "scripts": {
     "build": "lerna run prebuild && lerna run build",
     "test": "vitest",
@@ -19,6 +21,7 @@
     "@types/react": "^18.2.73",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",
+    "@vitest/coverage-v8": "^1.4.0",
     "pkgroll": "^2.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
