@@ -12,6 +12,7 @@
     "import": "./dist/index.mjs"
   },
   "scripts": {
+    "dev": "vite example",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
     "prebuild": "rm -rf dist",
