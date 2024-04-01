@@ -1,7 +1,7 @@
 {
   "name": "react-inline-center",
   "version": "1.0.2",
-  "description": "Centering inline element",
+  "description": "Centering inline elements like magic",
   "license": "MIT",
   "repository": "ambar/react-inline-center",
   "main": "./dist/index.cjs",
@@ -12,8 +12,7 @@
     "import": "./dist/index.mjs"
   },
   "scripts": {
-    "test": "vitest",
-    "test:coverage": "vitest run --coverage",
+    "dev": "vite",
     "prebuild": "rm -rf dist",
     "build": "pkgroll"
   },

@@ -18,7 +18,7 @@
     "import": "./dist/index.mjs"
   },
   "scripts": {
-    "dev": "vite example",
+    "dev": "vite",
     "prebuild": "rm -rf dist",
     "build": "pkgroll"
   },
