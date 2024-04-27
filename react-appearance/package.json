@@ -19,6 +19,7 @@
     "import": "./dist/index.mjs"
   },
   "scripts": {
+    "prepack": "npm run build",
     "dev": "vite",
     "prebuild": "rm -rf dist",
     "build": "pkgroll"
