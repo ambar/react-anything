@@ -8,7 +8,7 @@ type Props = {
 
 const InlineCenter = ({children, disabled = false}: Props) =>
   disabled ? (
-    children
+    <>{children}</>
   ) : (
     <span style={{display: 'inline-flex', alignItems: 'center'}}>
       {ZWSP}
