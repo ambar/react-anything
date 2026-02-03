@@ -86,20 +86,22 @@ export const useColorSchemeState = ({
     }
     return getPreferredTheme()
   })
-  const setColorScheme = useHandler((value: ConfigValue) => {
-    if (hardcodedColorScheme) {
-      return
-    }
-    setColorSchemeInternal(
-      value === 'auto'
-        ? window.matchMedia('(prefers-color-scheme: dark)').matches
-          ? 'dark'
-          : 'light'
-        : value,
-    )
-    setStoredTheme(value)
-    setSkipEffect(true)
-  })
+  const setColorScheme = useHandler(
+    (value: ConfigValue, storeValue: ConfigValue = value) => {
+      if (hardcodedColorScheme) {
+        return
+      }
+      setColorSchemeInternal(
+        value === 'auto'
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+          : value,
+      )
+      setStoredTheme(storeValue)
+      setSkipEffect(true)
+    },
+  )
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', colorScheme === 'dark')
@@ -115,6 +117,7 @@ export const useColorSchemeState = ({
 
   // Update the theme when the localStorage changes
   const value = sanitize(storedTheme)
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     if (skipEffect) {
       return
@@ -123,6 +126,7 @@ export const useColorSchemeState = ({
   }, [value])
 
   // Update the theme when the OS theme changes
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     if (skipEffect) {
       return
