@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/ambar/react-anything/compare/react-appearance@0.0.3...react-appearance@1.0.0) (2026-02-03)
+
+**Note:** Version bump only for package react-appearance
+
+
+
+
+
 ## [0.0.3](https://github.com/ambar/react-anything/compare/react-appearance@0.0.2...react-appearance@0.0.3) (2024-04-27)
 
 
