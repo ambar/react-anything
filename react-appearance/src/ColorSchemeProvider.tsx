@@ -17,12 +17,12 @@ export const ColorSchemeProvider = ({
   children,
   ...props
 }: ColorSchemeProviderProps) => {
-  const [colorScheme, setColorScheme] = useColorSchemeState(props)
+  const [themeValue, setThemeValue, colorScheme] = useColorSchemeState(props)
   return (
     <ColorSchemeContext.Provider
       value={useMemo(
-        () => [colorScheme, setColorScheme],
-        [colorScheme, setColorScheme],
+        () => [themeValue, setThemeValue, colorScheme],
+        [themeValue, setThemeValue, colorScheme],
       )}
     >
       {children}

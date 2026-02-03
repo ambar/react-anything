@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useState, useRef} from 'react'
+import {useCallback, useEffect, useRef, useState} from 'react'
 
 /**
  * Read/update the value in localStorage, and keeping it in sync with other tabs.

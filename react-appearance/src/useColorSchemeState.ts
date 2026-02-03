@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useState} from 'react'
+import {useEffect, useState} from 'react'
 import {useHandler} from './useHandler'
 import {useMediaQuery} from './useMediaQuery'
 import {useStorageValue} from './useStorageValue'
@@ -35,7 +35,7 @@ export const getInlineColorSchemeScript = ({
 // Value to be used
 export type ColorScheme = 'light' | 'dark'
 // Value to be stored
-type ConfigValue = ColorScheme | 'auto'
+export type ConfigValue = ColorScheme | 'auto'
 
 const sanitize = (value: string | null): ConfigValue => {
   return value && ['light', 'dark', 'auto'].includes(value)
@@ -86,16 +86,20 @@ export const useColorSchemeState = ({
     }
     return getPreferredTheme()
   })
-  const setColorScheme = useHandler(
-    (value: ColorScheme, storeValue: ConfigValue = value) => {
-      if (hardcodedColorScheme) {
-        return
-      }
-      setColorSchemeInternal(value)
-      setStoredTheme(storeValue)
-      setSkipEffect(true)
-    },
-  )
+  const setColorScheme = useHandler((value: ConfigValue) => {
+    if (hardcodedColorScheme) {
+      return
+    }
+    setColorSchemeInternal(
+      value === 'auto'
+        ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light'
+        : value,
+    )
+    setStoredTheme(value)
+    setSkipEffect(true)
+  })
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', colorScheme === 'dark')
@@ -110,12 +114,13 @@ export const useColorSchemeState = ({
   }, [skipEffect])
 
   // Update the theme when the localStorage changes
+  const value = sanitize(storedTheme)
   useEffect(() => {
     if (skipEffect) {
       return
     }
-    setColorScheme(getPreferredTheme(), sanitize(storedTheme))
-  }, [storedTheme])
+    setColorScheme(value)
+  }, [value])
 
   // Update the theme when the OS theme changes
   useEffect(() => {
@@ -125,5 +130,5 @@ export const useColorSchemeState = ({
     setColorScheme(matchesDark ? 'dark' : 'light', 'auto')
   }, [matchesDark])
 
-  return [colorScheme, setColorScheme] as const
+  return [value, setColorScheme, colorScheme] as const
 }
